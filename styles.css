@@ -1,4 +1,4 @@
-body {
+.body {
   margin: 0px;
 }
 
@@ -7,5 +7,8 @@ body {
   z-index: -1;
   height: 80vh;
   width: 100vw;
+
+  display: grid;
+
 }
 /*# sourceMappingURL=styles.css.map */

@@ -2,8 +2,9 @@
 let map = am4core.create("chartDiv", am4maps.MapChart);
 map.geodata = am4geodata_worldLow;
 
-am4core.useTheme(am4themes_animated);
 
+am4core.useTheme(am4themes_animated);
+ 
 
 map.projection = new am4maps.projections.Miller();
 
@@ -32,9 +33,9 @@ imageSeries.mapImages.template.propertyFields.url = "url";
 var colorSet = new am4core.ColorSet();
 
 var circle = imageSeries.mapImages.template.createChild(am4core.Circle);
-circle.radius = 6;
+circle.radius = 8;
 circle.propertyFields.fill = "color";
-circle.nonScaling = true;
+circle.nonScaling = false;
 
 
 
@@ -64,10 +65,10 @@ const updateData = setInterval(async function () {
 
   imageSeries.data = [
     {
-      title: "🚀  ISS",
+      title: `🛰️${coord[0]},${coord[1]}`,
       latitude: coord[0],
       longitude: coord[1],
-      color: "red",
+      color: "#ff650d",
     },
   ];
    
