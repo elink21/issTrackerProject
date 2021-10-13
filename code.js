@@ -2,9 +2,7 @@
 let map = am4core.create("chartDiv", am4maps.MapChart);
 map.geodata = am4geodata_worldLow;
 
-
 am4core.useTheme(am4themes_animated);
- 
 
 map.projection = new am4maps.projections.Miller();
 
@@ -37,14 +35,16 @@ circle.radius = 8;
 circle.propertyFields.fill = "color";
 circle.nonScaling = false;
 
-
+const getActualPosition = async () => {
+  return (await fetch("")).json();
+};
 
 const getActualPosition = async () => {
-  return (await fetch("http://api.open-notify.org/iss-now.json")).json();
+  return (await fetch("https://api.open-notify.org/iss-now.json")).json();
 };
 
 const getActualPeople = async () => {
-  return (await fetch("http://api.open-notify.org/astros.json")).json();
+  return (await fetch("https://api.open-notify.org/astros.json")).json();
 };
 
 const updateData = setInterval(async function () {
@@ -71,5 +71,4 @@ const updateData = setInterval(async function () {
       color: "#ff650d",
     },
   ];
-   
 }, 2000);
