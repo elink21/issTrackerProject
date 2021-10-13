@@ -58,4 +58,14 @@ const updateData = setInterval(async function () {
       color: "#ff650d",
     },
   ];
+
+  document.getElementById("visibilityField").innerHTML =
+    positionData["visibility"];
+
+  document.getElementById("velocityField").innerHTML =
+    positionData["velocity"] / 3600 + "KM/S";
+
+  document.getElementById("positionField").innerHTML = `Lat: ${coord[0].toFixed(
+    3
+  )}, Lon: ${coord[1].toFixed(3)}`;
 }, 2000);

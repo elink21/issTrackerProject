@@ -5,12 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="chartDiv"></div>
-    <h1>Random header</h1>
-   
+    <div id="appInterface">
+      <div id="title">
+        <h1>ISS Tracker</h1>
+        <h1>🛰️🌌☄️</h1>
+      </div>
+      <div id="chartDiv"></div>
+
+      <div id="infoDiv">
+        <div>
+          <h4>📌</h4>
+          <p id="positionField"></p>
+          <h4>Position</h4>
+        </div>
+        <div>
+          <h4>🚀</h4>
+          <p id="velocityField"></p>
+          <h4>Velocity</h4>
+        </div>
+        <div>
+          <h4>👁️</h4>
+          <p id="visibilityField"></p>
+          <h4>Visibility</h4>
+        </div>
+      </div>
+    </div>
 
     <!--Third party libraries-->
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
@@ -18,8 +40,7 @@
     <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
-
-     <!--Local code-->
-     <script src="code.js"></script>
+    <!--Local code-->
+    <script src="code.js"></script>
   </body>
 </html>
