@@ -40,11 +40,11 @@ const getActualPosition = async () => {
 };
 
 const getActualPosition = async () => {
-  return (await fetch("https://cors-anywhere.herokuapp.com/corsdemo/http://api.open-notify.org/iss-now.json")).json();
+  return (await fetch("http://api.open-notify.org/iss-now.json")).json();
 };
 
 const getActualPeople = async () => {
-  return (await fetch("https://cors-anywhere.herokuapp.com/corsdemo/http://api.open-notify.org/astros.json")).json();
+  return (await fetch("http://api.open-notify.org/astros.json")).json();
 };
 
 const updateData = setInterval(async function () {
