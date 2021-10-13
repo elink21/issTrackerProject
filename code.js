@@ -35,30 +35,20 @@ circle.radius = 8;
 circle.propertyFields.fill = "color";
 circle.nonScaling = false;
 
-
-const getActualPosition = async () => {
-  return (await fetch("http://api.open-notify.org/iss-now.json")).json();
-};
-
-const getActualPeople = async () => {
-  return (await fetch("http://api.open-notify.org/astros.json")).json();
+const getISSData = async () => {
+  return (await fetch("https://api.wheretheiss.at/v1/satellites/25544")).json();
 };
 
 const updateData = setInterval(async function () {
   let positionData = {};
-  let peopleData = {};
 
   try {
-    positionData = await getActualPosition();
-    peopleData = await getActualPeople();
+    positionData = await getISSData();
   } catch (err) {
     console.log(err);
   }
 
-  let coord = [
-    +positionData.iss_position.latitude,
-    +positionData.iss_position.longitude,
-  ];
+  let coord = [+positionData.latitude, +positionData.longitude];
 
   imageSeries.data = [
     {
