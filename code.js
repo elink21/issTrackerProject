@@ -35,9 +35,6 @@ circle.radius = 8;
 circle.propertyFields.fill = "color";
 circle.nonScaling = false;
 
-const getActualPosition = async () => {
-  return (await fetch("")).json();
-};
 
 const getActualPosition = async () => {
   return (await fetch("http://api.open-notify.org/iss-now.json")).json();
