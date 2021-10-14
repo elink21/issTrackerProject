@@ -52,7 +52,7 @@ const updateData = setInterval(async function () {
 
   imageSeries.data = [
     {
-      title: `🛰️${coord[0]},${coord[1]}`,
+      title: `🛰️(${coord[0].toFixed(3)},${coord[1].toFixed(3)})`,
       latitude: coord[0],
       longitude: coord[1],
       color: "#ff650d",
@@ -63,7 +63,7 @@ const updateData = setInterval(async function () {
     positionData["visibility"];
 
   document.getElementById("velocityField").innerHTML =
-    positionData["velocity"] / 3600 + "KM/S";
+    (positionData["velocity"] / 3600).toFixed(2) + "KM/S";
 
   document.getElementById("positionField").innerHTML = `Lat: ${coord[0].toFixed(
     3
